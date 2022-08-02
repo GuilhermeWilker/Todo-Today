@@ -1,0 +1,17 @@
+:root {
+  --dark-background-color: #1a1a1a;
+  --dark-border-color: #262626;
+  --dark-tooltip-color: #262626;
+  --dark-button-color: #262626;
+  --dark-title-color: #e9e9e9;
+  --dark-text-color: #fff;
+
+  --cor-link: #47bef1;
+
+  --light-background-color: ; /* Background */
+  --light-border-color: ; /* Bordas */
+  --light-tooltip-color: ;
+  --light-button-color: ;
+  --light-title-color: ; /* Titulos */
+  --light-text-color: ; /* Textos */
+}

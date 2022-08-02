@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* overflow: hidden; */
+  background-color: var(--dark-background-color);
+  color: var(--dark-text-color);
+  font-family: "Poppins", sans-serif;
+
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dispo {
+  display: none;
+}
+
+.dispo-movel {
+  display: none;
+}
+
+/* Utilities */
+.error {
+  background-color: rgba(255, 0, 0, 0.082);
+}
+
+.error::placeholder {
+  color: red;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(70, 129, 70);
+}
+
+/* a */
+a {
+  text-decoration: none;
+  color: none;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+
+  padding: 12px;
+}
+
+/* ESTILIZAÇÃO DE RELÓGIO*/
+.clock {
+  font-family: "Staatliches", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 18rem;
+
+  font-size: 3.5rem;
+}
+
+.clock div {
+  text-align: center;
+  width: 90px;
+  height: 40px;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--dark-title-color);
+
+  letter-spacing: 1.3px;
+}
+
+.clock span.tempo {
+  font-weight: 450;
+  font-size: 13px;
+}
+
+/* MAIN */
+main {
+  flex-direction: row;
+
+  gap: 2%;
+}
+
+/* SECTION */
+section {
+  margin-top: 30px;
+  padding: 15px;
+}
+
+.pablita {
+  width: 40em;
+  margin-top: 2.5em;
+}
+#artigo-01 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#artigo-01 p {
+  font-size: 1.2rem;
+  font-style: justify;
+  letter-spacing: 0.05em;
+  font-family: "Nunito Sans", sans-serif;
+  color: rgb(196, 196, 196);
+}
+#artigo-01 .help-link {
+  display: block;
+  margin-top: 0.6em;
+  color: var(--cor-link);
+  cursor: pointer;
+  font-size: 0.95em;
+  margin-left: 24.9em;
+}
+#artigo-01 .help-link:hover {
+  text-decoration: underline;
+}
+
+/* tooltip */
+.tooltip {
+  margin-top: 5px;
+  margin-left: 311px;
+  float: right;
+  cursor: pointer;
+}
+
+.link {
+  color: var(--cor-link);
+}
+.link:hover {
+  cursor: pointer;
+
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+
+.tooltip-container {
+  letter-spacing: 0.05em;
+  z-index: 2;
+  display: flex;
+
+  background-color: var(--dark-tooltip-color);
+  color: var(--cor07);
+
+  border-radius: 17px;
+
+  height: 150px;
+  width: 370px;
+
+  padding-top: 12px;
+  padding-left: 20px;
+  margin-top: 2px;
+  margin-bottom: -150px;
+  margin-left: 1em;
+
+  opacity: 0.95;
+
+  clip-path: circle(5% at 90% 20%);
+  transition: all 0.3s ease-in-out;
+}
+
+.tooltip-container:hover {
+  clip-path: circle(100%);
+}
+
+/* ESTILIZAÇÃO POMODORO */
+.pomodoro-container {
+  text-align: center;
+  width: 660px;
+  border: 2px solid var(--dark-border-color);
+  border-radius: 0px 17px 17px;
+}
+
+.pomodoro-container h3 {
+  margin-top: 12px;
+  font-family: "Staatliches", sans-serif;
+  letter-spacing: 5px;
+  font-size: 2.5rem;
+  font-weight: 300;
+
+  display: inline-block;
+}
+
+.timer-pomodoro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 25px;
+}
+
+.timer-pomodoro label {
+  display: inline-block;
+}
+
+.w-container {
+  width: 200px;
+
+  text-align: center;
+}
+
+.t-container {
+  width: 200px;
+
+  text-align: center;
+}
+.i-container {
+  width: 200px;
+
+  text-align: center;
+}
+
+.pomodoro-container button {
+  margin-top: 15px;
+  width: 60%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 5px;
+
+  color: white;
+  background-color: var(--dark-button-color);
+  cursor: pointer;
+}
+
+.pomodoro-container button:hover {
+  background-color: #383535;
+  transition: 1s;
+}
+
+/* ASIDE */
+aside {
+  margin-top: 30px;
+  padding: 15px;
+}
+
+/* ESTILIZAÇÃO DE TO-DO */
+.container-todo-list {
+  color: black;
+
+  border: 2px solid var(--dark-border-color);
+  border-radius: 8px;
+  min-width: 660px;
+  width: 45%;
+
+  padding: 30px 40px;
+  height: 760px;
+
+  overflow-y: scroll;
+}
+
+.container-todo-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container-todo-list::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.new-task-container {
+  padding: 30px 20px;
+  border-top: 1px solid white;
+  /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); */
+
+  display: flex;
+}
+
+.new-task-container input {
+  flex: 3;
+  font-size: 1rem;
+  font-weight: 500;
+
+  border: 1px solid #feffff;
+  border-radius: 5px;
+
+  padding: 12px;
+}
+
+.new-task-container input:focus {
+  outline: none;
+}
+
+.new-task-button {
+  flex: 1;
+  cursor: pointer;
+
+  margin-left: 16px;
+  padding: 12px;
+  height: 100%;
+
+  border: none;
+  border-radius: 5px;
+
+  font-weight: 600;
+  font-size: 1rem;
+  background: var(--dark-button-color);
+  color: var(--dark-text-color);
+}
+.new-task-button:hover {
+  background-color: #383535;
+  transition: 1s;
+}
+
+.tasks-container {
+  background-color: #e4e3e3;
+  padding: 0.4px 20px;
+  margin-top: 60px;
+  margin: 20px auto;
+
+  border-radius: 10px;
+  box-shadow: 00 15px 30px rgba(0, 0, 0, 0.3);
+  width: 96%;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+
+.task-item i {
+  font-size: 1.2em;
+
+  color: rgb(95, 86, 86);
+  padding: 6px;
+  cursor: pointer;
+}

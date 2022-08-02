@@ -1,0 +1,252 @@
+@media (max-width: 1350px) {
+}
+
+@media (min-width: 1280px) {
+  section {
+    margin-left: 2em;
+  }
+  main {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  header {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  .clock {
+    font-size: 3.5em;
+  }
+  .pomodoro-container {
+    width: 37em;
+  }
+  .pomodoro-container h3 {
+    font-size: 2.3rem;
+  }
+  .w-container {
+    font-size: 0.95em;
+  }
+
+  .t-container {
+    font-size: 0.95em;
+  }
+  .i-container {
+    font-size: 0.95em;
+  }
+
+  .pomodoro-container button {
+    font-size: 0.95em;
+  }
+  .tooltip-container {
+    font-size: 0.95em;
+    height: 148px;
+    width: 361px;
+    margin-left: 15em;
+  }
+  .tooltip {
+    margin-top: 5.8px;
+    margin-left: 303.8px;
+    float: right;
+    cursor: pointer;
+  }
+  .container-todo-list {
+    min-width: 625px;
+    width: 45%;
+    height: 657px;
+  }
+  .pablita {
+    width: 34em;
+    margin-top: 1.5em;
+  }
+  #artigo-01 p {
+    font-size: 1.1rem;
+  }
+  #artigo-01 .help-link {
+    font-size: 0.9em;
+    margin-left: 25.9em;
+  }
+  main {
+    display: flex;
+    gap: 1px;
+  }
+  header {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  .clock {
+    font-size: 3.5em;
+  }
+  .pomodoro-container {
+    width: 37em;
+  }
+  .pomodoro-container h3 {
+    font-size: 2.3rem;
+  }
+  .w-container {
+    font-size: 0.95em;
+  }
+
+  .t-container {
+    font-size: 0.95em;
+  }
+  .i-container {
+    font-size: 0.95em;
+  }
+
+  .pomodoro-container button {
+    font-size: 0.95em;
+  }
+  .tooltip-container {
+    font-size: 0.95em;
+    height: 148px;
+    width: 361px;
+    margin-left: 38.8%;
+  }
+  .tooltip {
+    margin-top: 5.8px;
+    margin-left: 303.8px;
+    float: right;
+    cursor: pointer;
+  }
+  .container-todo-list {
+    min-width: 625px;
+    width: 45%;
+    height: 657px;
+  }
+  .pablita {
+    width: 34em;
+    margin-top: 1.5em;
+  }
+  #artigo-01 p {
+    font-size: 1.1rem;
+  }
+  #artigo-01 .help-link {
+    font-size: 0.9em;
+    margin-left: 25.9em;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+  main {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .pomodoro-container {
+    width: 39em;
+  }
+  .tooltip-container {
+    margin-left: 42%;
+  }
+
+  .container-todo-list {
+    min-width: 625px;
+    width: 45%;
+    height: 657px;
+  }
+
+  #artigo-01 {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  #artigo-01 {
+    display: none;
+  }
+  main {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header {
+    justify-content: space-between;
+  }
+  header h2 {
+    font-size: 1em;
+  }
+  .clock {
+    position: absolute;
+    font-size: 2.2em;
+    width: 6em;
+    margin-left: 1.5em;
+  }
+  .clock div {
+    position: relative;
+    align-self: center;
+    height: 11px;
+    width: 2em;
+    left: 1.5em;
+    top: -0.2em;
+  }
+  .clock span#segundos-span {
+    display: none;
+  }
+  .clock span#segundos {
+    display: none;
+  }
+
+  .pomodoro-container {
+    width: 21em;
+  }
+  .pomodoro-container button {
+    font-size: 0.85em;
+    width: 7em;
+  }
+  .pomodoro-container h3 {
+    font-size: 2.3rem;
+  }
+  .w-container {
+    font-size: 0.85em;
+  }
+  .t-container {
+    font-size: 0.85em;
+  }
+  .i-container {
+    font-size: 0.85em;
+  }
+
+  .container-todo-list {
+    min-width: 21.5em;
+    width: 45%;
+    height: 657px;
+  }
+  .new-task-container {
+    flex-direction: column;
+    width: 15.5em;
+    align-items: center;
+    justify-content: center;
+  }
+  .new-task-container input {
+    width: 100%;
+    align-self: center;
+    font-size: 0.95em;
+  }
+  .new-task-container button {
+    align-self: center;
+    width: 100%;
+    margin-top: 0.35em;
+    margin-left: -0.1em;
+  }
+  .tasks-container {
+    margin-top: -0.5em;
+    font-size: 0.88em;
+  }
+
+  .tooltip-container {
+    margin-left: 42%;
+    display: none;
+  }
+  .tooltip {
+    margin-top: 5.8px;
+    margin-left: 303.8px;
+    float: right;
+    cursor: pointer;
+  }
+}
