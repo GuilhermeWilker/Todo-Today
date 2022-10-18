@@ -7,12 +7,16 @@
   
 ## Demonstração da aplicação
 <p align="center">
-<img width="510px" src="src/imagens/readME-images/Demonstracao.png" alt="Demonstração do To-do" />
+<img width="510px" src="src/imagens/readME-images/1.png.png" alt="Demonstração do To-do" />
 </p>
 <p align="center">
-<img width="510px" src="src/imagens/readME-images/Demonstracao.gif" alt="Demonstração do To-do" />
+<img width="510px" src="src/imagens/readME-images/2.png" alt="Demonstração do To-do" />
 </p>
-Simples e funcional, nosso To-do traz as principais características para gerenciar suas atividades de estudos ou trabalho.<br />
+Simples e funcional, nosso To-do traz as principais características para gerenciar suas atividades de estudos ou trabalho. Listando tarefas ou utilizando o pomodoro.<br />
+<p align="center">
+<img width="510px" src="src/imagens/readME-images/3.png" alt="Demonstração do To-do" />
+</p>
+Crie anotações e otimize ainda mais a sua produtividade durantes seus estudos. <br />
 <a href="https://guilhermewilker.github.io/Todo-Today/" target="_blank">🔗Clique aqui e use agora mesmo!</a>
 
 ## Roadmap
@@ -27,6 +31,7 @@ Simples e funcional, nosso To-do traz as principais características para gerenc
 - 🖥️Modo tela cheia
 - ⏳Timer Pomodoro
 - 📃Listagem de tarefas
+- 📃Anotações
 
 ## Tecnologias utilizadas
 
