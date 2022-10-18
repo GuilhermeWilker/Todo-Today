@@ -7,7 +7,7 @@
   
 ## Demonstração da aplicação
 <p align="center">
-<img width="510px" src="src/imagens/readME-images/1.png.png" alt="Demonstração do To-do" />
+<img width="510px" src="src/imagens/readME-images/1.png" alt="Demonstração do To-do" />
 </p>
 <p align="center">
 <img width="510px" src="src/imagens/readME-images/2.png" alt="Demonstração do To-do" />
