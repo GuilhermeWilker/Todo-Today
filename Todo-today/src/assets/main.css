@@ -1,0 +1,74 @@
+@import "./base.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* overflow: hidden; */
+  background-color: var(--dark-background-color);
+  color: var(--dark-text-color);
+  font-family: "Poppins", sans-serif;
+
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dispo {
+  display: none;
+}
+
+.dispo-movel {
+  display: none;
+}
+
+/* Utilities */
+.error {
+  background-color: rgba(255, 0, 0, 0.082);
+}
+
+.error::placeholder {
+  color: red;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(70, 129, 70);
+}
+
+/* a */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+
+  padding: 12px;
+}
+
+/* MAIN */
+main {
+  flex-direction: row;
+
+  gap: 2%;
+}
+
+/* SECTION */
+section {
+  margin-top: 0px;
+  padding: 15px;
+}
+
+/* ASIDE */
+aside {
+  margin-top: 30px;
+  padding: 15px;
+}
