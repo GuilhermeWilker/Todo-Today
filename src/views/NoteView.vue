@@ -65,13 +65,15 @@ function salvarRegistrosLocalStorage() {
             @click="selecionarRegistro(registro.id)"
             @dblclick="deletarRegistro(registro.id)"
           >
-            <div class="notes__small-title">{{ registro.titulo }}</div>
-            <div class="notes__small-body">
+            <h2 class="notes__small-title">{{ registro.titulo }}</h2>
+
+            <p class="notes__small-body">
               {{ registro.body.substring(0, 30) + (registro.body.length > 30 ? '...' : '') }}
-            </div>
-            <div class="notes__small-updated">
+            </p>
+
+            <small class="notes__small-updated">
               {{ new Date(registro.updated).toLocaleString(undefined, { dateStyle: 'short', timeStyle: 'short' }) }}
-            </div>
+            </small>
           </li>
         </ul>
       </nav>

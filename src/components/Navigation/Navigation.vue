@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
   <header id="artigo-01">
     <RouterLink to="/notes" class="note-btn">Criar anotações</RouterLink>
 
-    <RouterLink to="/" class="note-btn">Criar Mapas mentais</RouterLink>
+    <RouterLink to="/board" class="note-btn">Criar Mapas mentais</RouterLink>
   </header>
 
   <section>
