@@ -7,7 +7,7 @@
 }
 
 body {
-  /* overflow: hidden; */
+  overflow: hidden;
   background-color: var(--dark-background-color);
   color: var(--dark-text-color);
   font-family: "Poppins", sans-serif;

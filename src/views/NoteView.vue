@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { RouterLink } from 'vue-router';
+import { ref, onMounted } from "vue";
+import { RouterLink } from "vue-router";
 
 const registros = ref([]);
 const registroAtivo = ref({});
@@ -11,16 +11,20 @@ onMounted(() => {
 });
 
 function carregarRegistros() {
-  const registrosLocalStorage = JSON.parse(localStorage.getItem('notesapp-notes') || '[]');
-  registros.value = registrosLocalStorage.sort((a, b) => new Date(b.updated) - new Date(a.updated));
+  const registrosLocalStorage = JSON.parse(
+    localStorage.getItem("notesapp-notes") || "[]"
+  );
+  registros.value = registrosLocalStorage.sort(
+    (a, b) => new Date(b.updated) - new Date(a.updated)
+  );
   registroAtivo.value = registros.value.length > 0 ? registros.value[0] : {};
 }
 
 function adicionarRegistro() {
   registros.value.push({
     id: Math.floor(Math.random() * 1000000),
-    titulo: '',
-    body: '',
+    titulo: "",
+    body: "",
     updated: new Date().toISOString(),
   });
   registroAtivo.value = registros.value[registros.value.length - 1];
@@ -29,12 +33,12 @@ function adicionarRegistro() {
 }
 
 function selecionarRegistro(id) {
-  registroAtivo.value = registros.value.find(registro => registro.id === id);
+  registroAtivo.value = registros.value.find((registro) => registro.id === id);
   visualizacaoRegistro.value = true;
 }
 
 function deletarRegistro(id) {
-  registros.value = registros.value.filter(registro => registro.id !== id);
+  registros.value = registros.value.filter((registro) => registro.id !== id);
   registroAtivo.value = {};
   visualizacaoRegistro.value = false;
   salvarRegistrosLocalStorage();
@@ -45,7 +49,7 @@ function salvarRegistro() {
 }
 
 function salvarRegistrosLocalStorage() {
-  localStorage.setItem('notesapp-notes', JSON.stringify(registros.value));
+  localStorage.setItem("notesapp-notes", JSON.stringify(registros.value));
 }
 </script>
 
@@ -68,11 +72,18 @@ function salvarRegistrosLocalStorage() {
             <h2 class="notes__small-title">{{ registro.titulo }}</h2>
 
             <p class="notes__small-body">
-              {{ registro.body.substring(0, 30) + (registro.body.length > 30 ? '...' : '') }}
+              {{
+                registro.body.substring(0, 30) + (registro.body.length > 30 ? "..." : "")
+              }}
             </p>
 
             <small class="notes__small-updated">
-              {{ new Date(registro.updated).toLocaleString(undefined, { dateStyle: 'short', timeStyle: 'short' }) }}
+              {{
+                new Date(registro.updated).toLocaleString(undefined, {
+                  dateStyle: "short",
+                  timeStyle: "short",
+                })
+              }}
             </small>
           </li>
         </ul>
@@ -180,7 +191,7 @@ function salvarRegistrosLocalStorage() {
   border-radius: 12px;
   /* font-weight: bold; */
 }
-.notes__list-item--selected:hover{
+.notes__list-item--selected:hover {
   background: #3d3d3d;
 }
 
@@ -196,6 +207,8 @@ function salvarRegistrosLocalStorage() {
 .notes__small-body {
   font-size: 12px;
   padding: 0 10px;
+  overflow: hidden;
+  max-width: 90%;
 }
 
 .notes__small-updated {
