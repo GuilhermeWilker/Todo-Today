@@ -1,6 +1,6 @@
 <script setup>
 import Navigation from "../components/Navigation/Navigation.vue";
-import TodoList from "../components/todo-list/Todo-list.vue";
+import TodoList from "../components/Todo-list/Todo-list.vue";
 import Pomodoro from "../components/Pomodoro/Pomodoro.vue";
 </script>
 
