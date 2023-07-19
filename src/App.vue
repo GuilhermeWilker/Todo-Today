@@ -1,8 +1,7 @@
 <script setup>
-import { RouterView } from 'vue-router';
+import { RouterView } from "vue-router";
 
-
-import Clock from './components/Clock/Clock.vue'
+import Clock from "./components/Clock/Clock.vue";
 </script>
 
 <template>
