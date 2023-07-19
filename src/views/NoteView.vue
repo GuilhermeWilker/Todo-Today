@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { RouterLink } from "vue-router";
+import { supabase } from "../lib/supabaseClient";
 
 const registros = ref([]);
 const registroAtivo = ref({});
@@ -10,27 +11,38 @@ onMounted(() => {
   carregarRegistros();
 });
 
-const carregarRegistros = () => {
-  const registrosLocalStorage = JSON.parse(
-    localStorage.getItem("notesapp-notes") || "[]"
-  );
-  registros.value = registrosLocalStorage.sort(
-    (a, b) => new Date(b.updated) - new Date(a.updated)
-  );
-  registroAtivo.value = registros.value.length > 0 ? registros.value[0] : {};
+const carregarRegistros = async () => {
+  const { data, error } = await supabase.from("anotacoes").select("*");
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  registros.value =
+    data && data.length > 0
+      ? data.sort((a, b) => new Date(b.updated) - new Date(a.updated))
+      : [];
+
+  registroAtivo.value =
+    registros.value.length > 0
+      ? registros.value[0]
+      : { titulo: "", body: "", updated: "" };
 };
 
-const adicionarRegistro = () => {
-  registros.value.push({
-    id: Math.floor(Math.random() * 1000000), // Gerando ID randômico.
+const adicionarRegistro = async () => {
+  const novaNota = {
     titulo: "",
     body: "",
-    updated: new Date().toISOString(),
-  });
+    update: new Date().toISOString(),
+  };
 
-  registroAtivo.value = registros.value[registros.value.length - 1];
+  const { data, error } = await supabase.from("anotacoes").insert([novaNota]);
+
+  carregarRegistros();
+  registroAtivo.value = { ...novaNota };
+
   visualizacaoRegistro.value = true;
-  salvarRegistrosLocalStorage();
 };
 
 const selecionarRegistro = (id) => {
@@ -38,31 +50,44 @@ const selecionarRegistro = (id) => {
   visualizacaoRegistro.value = true;
 };
 
-const deletarRegistro = (id) => {
-  registros.value = registros.value.filter((registro) => registro.id !== id);
+const deletarRegistro = async (id) => {
+  const { error } = await supabase.from("anotacoes").delete().eq("id", id);
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  carregarRegistros();
   registroAtivo.value = {};
   visualizacaoRegistro.value = false;
-  salvarRegistrosLocalStorage();
 };
 
-const salvarRegistro = () => {
-  salvarRegistrosLocalStorage();
-};
+const salvarRegistro = async () => {
+  const { error } = await supabase
+    .from("anotacoes")
+    .update(registroAtivo.value)
+    .eq("id", registroAtivo.value.id);
+  if (error) {
+    console.error(error);
+    return;
+  }
 
-const salvarRegistrosLocalStorage = () => {
-  localStorage.setItem("notesapp-notes", JSON.stringify(registros.value));
+  carregarRegistros();
 };
 </script>
 
 <template>
   <div class="about">
     <div class="notes" id="notes">
+      <!-- Sidebar -->
       <nav class="notes__sidebar">
+        <!-- Botão adicionar nova anotação -->
         <button class="notes__add" type="button" @click="adicionarRegistro">
           Adicionar nota
         </button>
 
         <ul class="notes__list">
+          <!-- Lista de anotações -->
           <li
             class="notes__list-item notes__list-item--selected"
             v-for="registro in registros"
@@ -70,17 +95,20 @@ const salvarRegistrosLocalStorage = () => {
             @click="selecionarRegistro(registro.id)"
             @dblclick="deletarRegistro(registro.id)"
           >
+            <!-- Titulo do registro -->
             <h2 class="notes__small-title">{{ registro.titulo }}</h2>
 
+            <!-- Pequeno resumod o registro -->
             <p class="notes__small-body">
               {{
                 registro.body.substring(0, 30) + (registro.body.length > 30 ? "..." : "")
               }}
             </p>
 
+            <!-- Data do regsitro -->
             <small class="notes__small-updated">
               {{
-                new Date(registro.updated).toLocaleString(undefined, {
+                new Date().toLocaleString(undefined, {
                   dateStyle: "short",
                   timeStyle: "short",
                 })
@@ -89,7 +117,9 @@ const salvarRegistrosLocalStorage = () => {
           </li>
         </ul>
       </nav>
-      <div
+
+      <!-- Preview das anotações -->
+      <article
         class="notes__preview"
         :style="{ visibility: visualizacaoRegistro ? 'visible' : 'hidden' }"
       >
@@ -100,18 +130,20 @@ const salvarRegistrosLocalStorage = () => {
           v-model="registroAtivo.titulo"
           @blur="salvarRegistro"
         />
+
+        <!-- Campo de texto -->
         <textarea
           class="notes__body"
           placeholder="I am the notes body and i wanna be typed😏..."
           v-model="registroAtivo.body"
           @blur="salvarRegistro"
         ></textarea>
-      </div>
+      </article>
 
       <div class="notes__home">
         <small>Clique 2x para excluir</small>
 
-        <router-link to="/" class="btn-home">Voltar ao inicio</router-link>
+        <router-link to="/" class="btn-home"> Voltar ao inicio </router-link>
       </div>
     </div>
   </div>
