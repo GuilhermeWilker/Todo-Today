@@ -15,6 +15,7 @@ coverage
 *.local
 .env
 env.js
+.env.development
 
 /cypress/videos/
 /cypress/screenshots/
