@@ -10,7 +10,7 @@ onMounted(() => {
   carregarRegistros();
 });
 
-function carregarRegistros() {
+const carregarRegistros = () => {
   const registrosLocalStorage = JSON.parse(
     localStorage.getItem("notesapp-notes") || "[]"
   );
@@ -18,39 +18,40 @@ function carregarRegistros() {
     (a, b) => new Date(b.updated) - new Date(a.updated)
   );
   registroAtivo.value = registros.value.length > 0 ? registros.value[0] : {};
-}
+};
 
-function adicionarRegistro() {
+const adicionarRegistro = () => {
   registros.value.push({
-    id: Math.floor(Math.random() * 1000000),
+    id: Math.floor(Math.random() * 1000000), // Gerando ID randômico.
     titulo: "",
     body: "",
     updated: new Date().toISOString(),
   });
+
   registroAtivo.value = registros.value[registros.value.length - 1];
   visualizacaoRegistro.value = true;
   salvarRegistrosLocalStorage();
-}
+};
 
-function selecionarRegistro(id) {
+const selecionarRegistro = (id) => {
   registroAtivo.value = registros.value.find((registro) => registro.id === id);
   visualizacaoRegistro.value = true;
-}
+};
 
-function deletarRegistro(id) {
+const deletarRegistro = (id) => {
   registros.value = registros.value.filter((registro) => registro.id !== id);
   registroAtivo.value = {};
   visualizacaoRegistro.value = false;
   salvarRegistrosLocalStorage();
-}
+};
 
-function salvarRegistro() {
+const salvarRegistro = () => {
   salvarRegistrosLocalStorage();
-}
+};
 
-function salvarRegistrosLocalStorage() {
+const salvarRegistrosLocalStorage = () => {
   localStorage.setItem("notesapp-notes", JSON.stringify(registros.value));
-}
+};
 </script>
 
 <template>
@@ -101,7 +102,7 @@ function salvarRegistrosLocalStorage() {
         />
         <textarea
           class="notes__body"
-          placeholder="I am the notes body..."
+          placeholder="I am the notes body and i wanna be typed😏..."
           v-model="registroAtivo.body"
           @blur="salvarRegistro"
         ></textarea>
