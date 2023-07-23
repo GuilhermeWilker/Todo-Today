@@ -8,15 +8,15 @@ import { RouterLink } from "vue-router";
 
     <RouterLink to="/board" class="note-btn">Criar Mapas mentais</RouterLink>
 
-    <RouterLink to="/login" class="note-btn">Login</RouterLink>
+    <!-- <RouterLink to="/login" class="note-btn">Login</RouterLink> -->
   </header>
 
   <section>
     <img class="img" src="/imgs/pablita-911.png" alt="" />
     <p>
       Obtenha melhor desempenho mesclando suas tarefas com o uso do
-      <strong>Pomodoro</strong>, te auxiliando a gerenciar melhor seu tempo em cada uma
-      delas.
+      <strong>Pomodoro</strong>, te auxiliando a gerenciar melhor seu tempo em
+      cada uma delas.
     </p>
   </section>
 </template>
