@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+import { RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -7,49 +7,51 @@ import { RouterLink } from 'vue-router'
     <RouterLink to="/notes" class="note-btn">Criar anotações</RouterLink>
 
     <RouterLink to="/board" class="note-btn">Criar Mapas mentais</RouterLink>
+
+    <RouterLink to="/login" class="note-btn">Login</RouterLink>
   </header>
 
   <section>
     <img class="img" src="/imgs/pablita-911.png" alt="" />
     <p>
       Obtenha melhor desempenho mesclando suas tarefas com o uso do
-      <strong>Pomodoro</strong>, te auxiliando a gerenciar melhor seu tempo em
-      cada uma delas.
+      <strong>Pomodoro</strong>, te auxiliando a gerenciar melhor seu tempo em cada uma
+      delas.
     </p>
   </section>
 </template>
 
 <style scoped>
 header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .note-btn {
-    background-color: #d9d9d9;
-    font-weight: 500;
-    font-size: 14px;
+  background-color: #d9d9d9;
+  font-weight: 500;
+  font-size: 14px;
 
-    border-radius: 20px;
-    padding: 12px 18px;
-    cursor: pointer;
+  border-radius: 20px;
+  padding: 12px 18px;
+  cursor: pointer;
 
-    color: black;
-    border: none;
+  color: black;
+  border: none;
 
-    transition: 0.3s;
-  }
- .note-btn:hover {
-    background-color: #b4b2b2;
-  }
+  transition: 0.3s;
+}
+.note-btn:hover {
+  background-color: #b4b2b2;
+}
 
-  section {
-    margin-top: 20px;
-  }
+section {
+  margin-top: 20px;
+}
 
-  .img {
-    width: 90%;
-  }
+.img {
+  width: 90%;
+}
 </style>

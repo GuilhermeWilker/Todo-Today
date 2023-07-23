@@ -72,3 +72,35 @@ aside {
   margin-top: 30px;
   padding: 15px;
 }
+
+.my-1 {
+  margin-block: 10px;
+}
+
+.my-2 {
+  margin-block: 20px;
+}
+
+.my-3 {
+  margin-block: 30px;
+}
+
+.my-4 {
+  margin-block: 40px;
+}
+
+.m-auto {
+  margin-inline: auto;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.anchor {
+  color: #519bf1;
+}
+
+.anchor:hover {
+  text-decoration: underline;
+}
