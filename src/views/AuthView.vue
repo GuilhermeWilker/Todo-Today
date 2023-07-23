@@ -6,12 +6,10 @@
   <main class="auth">
     <section class="auth__hero">
       <h3>Bem vindo ao To-do Today!</h3>
-      <p>Faça o seu login ao lado..</p>
+      <p>Se é sua primeira vez aqui, faça seu cadastro ao lado..</p>
 
       <div class="auth__hero-img-container">
-        <a href="/auth" class="anchor"
-          >Caso ainda não nos conheça, clique aqui</a
-        >
+        <a href="/login" class="anchor">Se já nos conhece, clique aqui</a>
 
         <img src="/imgs/pablita-911.png" alt="" />
       </div>
@@ -19,20 +17,24 @@
 
     <section class="form__area">
       <form action="">
-        <h2 class="my-4 txt-center">Entrar em sua conta</h2>
+        <h2 class="my-4 txt-center">Criar uma nova conta</h2>
 
         <button class="form-btn-social my-1">
           <img src="../../public/imgs/github.png" alt="icone do github" />
-          Login with Github
+          Sing in with Github
         </button>
 
         <button class="form-btn-social">
           <img src="../../public/imgs/google.png" alt="icone do google" />
-          Login with Google
+          Sing in with Google
         </button>
 
         <div class="line"></div>
 
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" name="name" placeholder="Jhon doe" />
+        </div>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" name="email" placeholder="jhondoe@todo.com" />
@@ -42,7 +44,7 @@
           <input type="password" name="password" placeholder="***********" />
         </div>
 
-        <button class="form-btn" type="submit">Login</button>
+        <button class="form-btn" type="submit">Sign up</button>
       </form>
     </section>
   </main>
